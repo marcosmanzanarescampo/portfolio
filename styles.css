@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #333;
+    /* background-color: yellow; */
+    color: white;
+}
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    text-align: center;
+}
+.navBig img{
+    width: 80px
+}
+
+.navBig ul {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    white-space: nowrap;
+    
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.navBig ul li {
+
+    margin: 35px 15px;
+    display: flex;
+    align-items: center;
+}
+.navBig ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.navBig ul li.active a {
+    border-bottom: 4px solid red;
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+    font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.hero p {
+    font-size: 1.2rem;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+
+/* Fond décran responsive */
+
+img.fondecran {
+    /* On met en place le fond d'écran */
+    min-height: 100%;
+    min-width: 1024px;
+    /* On indique un redimensionnement proportionnel */
+    width: 100%;
+    height: auto;
+    /* L'image est positionnée en haut à gauche */
+    position: fixed;
+    top: 0;
+    left: 0;
+   }
+
+   @media screen and (max-width: 1024px) { /* Le traitement est ici spécifique à l'image */
+    img.fondecran {
+    left: 50%;
+    margin-left: -512px; /* 50% */
+    }
+}
+
+/* Effet machine à écrire */
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .typing-effect {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black; /* Curseur */
+    width: 0;
+    animation: typing 2s steps(50, end) forwards, blink 0.7s infinite;
+  }
+
+
+  /* Slidebar responsive */
+  .sidenav {
+    height: 30%;
+    width: 250px;
+    position: fixed;
+    z-index: 9999;
+    top: 20px;
+    left: -250px;
+    background-color: #e8e8e8;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #111;
+  }
+  
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Active class */
+  .sidenav.active {
+    left: 0;
+  }
+  
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  /* Icône burger */
+
+  .burger-icon {
+    background-color: transparent;
+  }
+
+  .burger-icon span {
+    display: none;
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 8px 0;
+  }
+
+  .openBtn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
+  
+
+  /* responsivite */
+
+  /* Média queries pour l'adaptabilité */
+
+/* Tablettes (768px à 1024px) */
+@media screen and (max-width: 1024px) {
+    header{
+        display: block
+    }
+    .openBtn{
+        display: none
+    }
+    }
+    .sidenav{
+        display: none
+}
+
+/* Mobiles (jusqu'à 767px) */
+@media screen and (max-width: 767px) {
+    header{
+        display: block
+    }
+    .openBtn{
+        display: none
+    }
+    .sidenav{
+        display: none
+    }
+}
+
+/* Petits écrans (moins de 480px) */
+@media screen and (max-width: 480px) {
+    header{
+        display: none
+    }
+    .openBtn{
+        display: block
+    }
+    .sidenav{
+        display: block
+    }
+}
